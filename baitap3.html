@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <h1>Tính điểm ĐH khối D</h1><br/>
+        
+        
+         Môn toán <input type="text" id="12"/></label><br/><br/>
+         Môn văn <input type="text" id="34"/></label><br/><br/>
+         Môn Anh <input type="text" id="56"/></label><br/><br/>
+        
+        <select id="abc">
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV3">KV3</option>
+        </select><br/><br/>
+        <button onclick="tinhdiemdaihoc()">Tính điểm</button>
+        
+        <p id="msg"></p>
+        <script>
+            function tinhdiemdaihoc(){
+            
+            var a = Number(document.getElementById("12").value);
+            var b = Number(document.getElementById("34").value);  
+            var c = Number(document.getElementById("56").value);
+            
+            var e = document.getElementById("abc");
+            var d = e.options[e.selectedIndex].text;
+
+            var result = a + b + c;
+            switch(d){
+                case "KV1": 
+                result = result + 0.75;
+                break;
+                case "KV2": 
+                result = result + 0.25;
+                break;
+                case "KV2-NT":  
+                result = result + 0.5;
+                break;
+                case "KV3": 
+                result = result + 0;
+                break;
+                default:
+                    break;
+            }
+            document.getElementById('msg').innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result;
+
+            }
+        </script>
+       
+       
+    </body>
+</html>
